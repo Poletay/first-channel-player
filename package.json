@@ -1,0 +1,23 @@
+{
+  "name": "first-channel-player",
+  "version": "0.0.1",
+  "description": "Custom video-player",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poletay/first-channel-player.git"
+  },
+  "keywords": [
+    "video",
+    "player"
+  ],
+  "author": "Smirnov Aleksey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Poletay/first-channel-player/issues"
+  },
+  "homepage": "https://github.com/Poletay/first-channel-player#readme"
+}
