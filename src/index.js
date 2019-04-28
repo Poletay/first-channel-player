@@ -23,6 +23,5 @@ muteButton.addEventListener('click', toggleMute);
 
 player.addEventListener('timeupdate', () => {
   const progress = (player.currentTime / player.duration) * 100;
-  console.log(player.currentTime);
   progressBar.setAttribute('style', `width: ${progress}%;`);
 });
