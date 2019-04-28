@@ -1,3 +1,76 @@
-body {
-  background-color: darkkhaki;
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: darken(darkorange, 10%);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  height: 97vh;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.video-player {
+  width: 100%;
+  font-size: 0;
+}
+
+.play-pause {
+  display: flex;
+  position: absolute;
+  background-color: rgba($color: yellow, $alpha: 0.5);
+  display: none;
+}
+
+.paused::after {
+  content: 'PLAY';
+}
+
+.in-progress::after {
+  content: 'SET PAUSE';
+}
+
+.video-container:hover .play-pause {
+  display: block;
+}
+
+.player {
+  width: 100%;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: black;
+  width: 100%;
+  height: 5px;
+} 
+.progress {
+  background-color: cornflowerblue;
+  width: 30%;
+  height: 5px;
 }
