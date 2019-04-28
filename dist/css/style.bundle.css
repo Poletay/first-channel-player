@@ -85,7 +85,6 @@ button#mute-unmute {
   font-size: 30px;
   border: none;
   outline: none;
-  display: none;
   background: none;
   background-color: rgba(100, 149, 237, 0.5);
   cursor: pointer; }

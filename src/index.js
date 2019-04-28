@@ -1,33 +1,8 @@
-const player = document.querySelector('.player');
-const playPauseScreen = document.querySelector('.play-pause');
-const progressBar = document.querySelector('.progress');
-const muteButton = document.getElementById('mute-unmute');
+import initPlayer from './player';
 
-const togglePlayPause = () => {
-  if (player.paused) {
-    playPauseScreen.className = 'play-pause in-progress';
-    player.play();
-  } else {
-    playPauseScreen.className = 'play-pause paused';
-    player.pause();
-  }
-};
+const source = 'http://v1-rtc.1internet.tv/video/multibitrate/video/2018/12/13/3c7a1fae-88d5-48cb-a451-17fa7f8082ef_20180511_Dekabristi_new_950.mp4';
 
-const toggleMute = () => {
-  muteButton.className = player.muted ? 'not-muted' : 'muted';
-  player.muted = !player.muted;
-};
+const player = initPlayer(source);
+const main = document.getElementById('main');
 
-playPauseScreen.addEventListener('click', togglePlayPause);
-
-muteButton.addEventListener('click', toggleMute);
-
-player.addEventListener('timeupdate', () => {
-  const progress = (player.currentTime / player.duration) * 100;
-  progressBar.setAttribute('style', `width: ${progress}%;`);
-});
-
-player.addEventListener('ended', () => {
-  playPauseScreen.className = 'play-pause ended';
-  console.log(player.paused);
-});
+main.appendChild(player);

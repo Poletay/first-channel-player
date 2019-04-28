@@ -90,10 +90,23 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("var player = document.querySelector('.player');\nvar playPauseScreen = document.querySelector('.play-pause');\nvar progressBar = document.querySelector('.progress');\nvar muteButton = document.getElementById('mute-unmute');\nconsole.log(player.canPlayType('video/mp4'));\n\nvar togglePlayPause = function togglePlayPause() {\n  if (player.paused) {\n    playPauseScreen.className = 'play-pause in-progress';\n    player.play();\n  } else {\n    playPauseScreen.className = 'play-pause paused';\n    player.pause();\n  }\n};\n\nvar toggleMute = function toggleMute() {\n  muteButton.className = player.muted ? 'not-muted' : 'muted';\n  player.muted = !player.muted;\n};\n\nplayPauseScreen.addEventListener('click', togglePlayPause);\nmuteButton.addEventListener('click', toggleMute);\nplayer.addEventListener('timeupdate', function () {\n  var progress = player.currentTime / player.duration * 100;\n  progressBar.setAttribute('style', \"width: \".concat(progress, \"%;\"));\n});\nplayer.addEventListener('ended', function () {\n  playPauseScreen.className = 'play-pause ended';\n  console.log(player.paused);\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _player__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./player */ \"./src/player.js\");\n\nvar source = 'http://v1-rtc.1internet.tv/video/multibitrate/video/2018/12/13/3c7a1fae-88d5-48cb-a451-17fa7f8082ef_20180511_Dekabristi_new_950.mp4';\nvar player = Object(_player__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(source);\nvar main = document.getElementById('main');\nmain.appendChild(player);\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/player.js":
+/*!***********************!*\
+  !*** ./src/player.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (source) {\n  // *****************************\n  // Create elements\n  // *****************************\n  var mainContainer = document.createElement('div');\n  mainContainer.classList.add('main-container');\n  var videoContainer = document.createElement('div');\n  videoContainer.classList.add('video-container');\n  var videoPlayer = document.createElement('div');\n  videoPlayer.classList.add('video-player');\n  var player = document.createElement('video');\n  player.classList.add('player');\n  player.muted = true;\n  player.autoplay = true;\n  player.src = source;\n  var playPause = document.createElement('div');\n  playPause.classList.add('play-pause', 'in-progress');\n  var controls = document.createElement('div');\n  controls.classList.add('controls');\n  var buttons = document.createElement('div');\n  buttons.classList.add('buttons');\n  var muteUnmuteBtn = document.createElement('button');\n  muteUnmuteBtn.id = 'mute-unmute';\n  muteUnmuteBtn.classList.add('muted');\n  var progressBar = document.createElement('div');\n  progressBar.classList.add('progress-bar');\n  var progress = document.createElement('div');\n  progress.classList.add('progress'); // *****************************\n  // Set event handlers for elements\n  // *****************************\n\n  player.addEventListener('timeupdate', function () {\n    var progressValue = player.currentTime / player.duration * 100;\n    progress.setAttribute('style', \"width: \".concat(progressValue, \"%;\"));\n  });\n  player.addEventListener('ended', function () {\n    playPause.className = 'play-pause ended';\n    console.log(player.paused);\n  });\n  muteUnmuteBtn.addEventListener('click', function () {\n    muteUnmuteBtn.className = player.muted ? 'not-muted' : 'muted';\n    player.muted = !player.muted;\n  });\n  playPause.addEventListener('click', function () {\n    if (player.paused) {\n      playPause.className = 'play-pause in-progress';\n      player.play();\n    } else {\n      playPause.className = 'play-pause paused';\n      player.pause();\n    }\n  }); // *****************************\n  // Compile player\n  // *****************************\n\n  mainContainer.appendChild(videoContainer);\n  videoContainer.appendChild(videoPlayer);\n  videoPlayer.appendChild(player);\n  videoContainer.appendChild(playPause);\n  mainContainer.appendChild(controls);\n  controls.appendChild(buttons);\n  buttons.appendChild(muteUnmuteBtn);\n  controls.appendChild(progressBar);\n  progressBar.appendChild(progress); // *****************************\n  // Return player\n  // *****************************\n\n  return mainContainer;\n});\n\n//# sourceURL=webpack:///./src/player.js?");
 
 /***/ }),
 

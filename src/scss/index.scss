@@ -1,8 +1,3 @@
-h1 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: darken(darkorange, 10%);
-}
-
 .main {
   display: flex;
   justify-content: center;
@@ -102,8 +97,7 @@ button#mute-unmute {
   font-size: 30px;
   border: none;
   outline: none;
-  display: none;
-  background: none;
+   background: none;
   background-color: rgba($color: cornflowerblue, $alpha: 0.5);
   cursor: pointer;
 }
