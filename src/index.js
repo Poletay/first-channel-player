@@ -19,9 +19,15 @@ const toggleMute = () => {
 };
 
 playPauseScreen.addEventListener('click', togglePlayPause);
+
 muteButton.addEventListener('click', toggleMute);
 
 player.addEventListener('timeupdate', () => {
   const progress = (player.currentTime / player.duration) * 100;
   progressBar.setAttribute('style', `width: ${progress}%;`);
+});
+
+player.addEventListener('ended', () => {
+  playPauseScreen.className = 'play-pause ended';
+  console.log(player.paused);
 });

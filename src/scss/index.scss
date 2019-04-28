@@ -34,7 +34,6 @@ h1 {
 
 .play-pause {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  display: flex;
   position: absolute;
   font-size: 100px;
   background-color: rgba($color: cornflowerblue, $alpha: 0.5);
@@ -51,6 +50,15 @@ h1 {
 .in-progress::after {
   content: 'PAUSE';
 }
+
+.ended::after {
+  content: 'REPLAY';
+}
+
+.play-pause.ended {
+  display: block;
+}
+
 
 .play-pause:hover {
   color: red;
@@ -83,6 +91,10 @@ h1 {
   background-color: cornflowerblue;
   height: 5px;
 }
+
+.progress-bar:hover, .progress:hover, .progress:hover .progress-bar, .progress-bar:hover .progress {
+  height: 20px;
+};
 
 button#mute-unmute {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
