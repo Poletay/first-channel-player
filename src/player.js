@@ -2,6 +2,8 @@ export default (source) => {
   // *****************************
   // Create elements
   // *****************************
+  const entirePlayer = document.createElement('div');
+
   const mainContainer = document.createElement('div');
   mainContainer.classList.add('main-container');
 
@@ -68,6 +70,7 @@ export default (source) => {
   // Compile player
   // *****************************
 
+  entirePlayer.appendChild(mainContainer);
   mainContainer.appendChild(videoContainer);
   videoContainer.appendChild(videoPlayer);
   videoPlayer.appendChild(player);
@@ -81,5 +84,5 @@ export default (source) => {
   // *****************************
   // Return player
   // *****************************
-  return mainContainer;
+  return entirePlayer;
 };
