@@ -1,0 +1,99 @@
+.main {
+  display: flex;
+  justify-content: center;
+  height: 97vh; }
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 800px; }
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative; }
+
+.video-player {
+  width: 100%;
+  font-size: 0; }
+
+.play-pause {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  position: absolute;
+  font-size: 100px;
+  background-color: rgba(100, 149, 237, 0.5);
+  cursor: pointer;
+  display: none;
+  border-radius: 50px;
+  padding: 10px; }
+
+.paused::after {
+  content: 'PLAY'; }
+
+.in-progress::after {
+  content: 'PAUSE'; }
+
+.ended::after {
+  content: 'REPLAY'; }
+
+.play-pause.ended {
+  display: block; }
+
+.play-pause:hover {
+  color: red; }
+
+.video-container:hover .play-pause {
+  display: block; }
+
+.player {
+  width: 100%; }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: right;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
+.progress-bar {
+  background-color: black;
+  width: 100%;
+  height: 5px; }
+
+.progress {
+  background-color: cornflowerblue;
+  height: 5px; }
+
+.progress-bar:hover, .progress:hover, .progress:hover .progress-bar, .progress-bar:hover .progress {
+  height: 20px; }
+
+button#mute-unmute {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  border: none;
+  outline: none;
+  background: none;
+  background-color: rgba(100, 149, 237, 0.5);
+  cursor: pointer; }
+
+#mute-unmute:hover {
+  color: red; }
+
+.muted::after {
+  content: 'UNMUTE'; }
+
+.not-muted::after {
+  content: 'MUTE'; }
+
+.video-container:hover #mute-unmute {
+  display: block; }
+
