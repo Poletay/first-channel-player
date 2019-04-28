@@ -1,5 +1,7 @@
 # first-channel-player
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/69da10c35487c25c0f35/maintainability)](https://codeclimate.com/github/Poletay/first-channel-player/maintainability)
+
 # Основные требования:
 Плеер должен
 * стартовать проигрывание автоматически
