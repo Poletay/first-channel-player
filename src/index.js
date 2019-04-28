@@ -1,6 +1,6 @@
 const player = document.querySelector('.player');
 const playPauseScreen = document.querySelector('.play-pause');
-// const progressBar = document.querySelector('.progress');
+const progressBar = document.querySelector('.progress');
 const muteButton = document.getElementById('mute-unmute');
 
 const togglePlayPause = () => {
@@ -20,3 +20,9 @@ const toggleMute = () => {
 
 playPauseScreen.addEventListener('click', togglePlayPause);
 muteButton.addEventListener('click', toggleMute);
+
+player.addEventListener('timeupdate', () => {
+  const progress = (player.currentTime / player.duration) * 100;
+  console.log(player.currentTime);
+  progressBar.setAttribute('style', `width: ${progress}%;`);
+});
